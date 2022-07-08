@@ -40,9 +40,9 @@ function play_war(arr, array) {  // this function is where the game starts once 
     let yu_card = 0;
     let moch_score = 0;
     let yu_score = 0;
-    while (card != 0) {
-        moch_card = arr.shift();
-        yu_card = array.shift();
+    while (card != 0) {               // this while loop is telling th computer that as long as there is cards to be played, keep playing
+        moch_card = arr.shift();      // arr is player 1 deck
+        yu_card = array.shift();      // array is player 2 deck 
         if (moch_card > yu_card) {
             console.log("Moch won the battle and recieved a point");
             moch_score++;
@@ -56,7 +56,7 @@ function play_war(arr, array) {  // this function is where the game starts once 
         }
         card--;
     }
-    console.log("Moch score: " + moch_score + " Yu score: " + yu_score);
+    console.log("Moch score: " + moch_score + " Yu score: " + yu_score);   // this is used to print out the score after each round
     if (moch_score > yu_score) {
         console.log("Moch won the war");
     }
@@ -66,12 +66,11 @@ function play_war(arr, array) {  // this function is where the game starts once 
     else {
         console.log("both players tied");
     }
+    console.log("Moch score: " + moch_score + " Yu score: " + yu_score);
     return 1;
 }
 
-let deck = (shuffle(Deck()));
-let player_moch = player(deck);
+let deck = (shuffle(Deck()));  //this creates a deck and suffles it before the game starts
+let player_moch = player(deck);  //for line 74 and 75 it deals 26 cards to those 2 players
 let player_yu = player(deck);
 play_war(player_moch, player_yu);
-
-console.log("Moch score: " + moch_score + " Yu score: " + yu_score);
