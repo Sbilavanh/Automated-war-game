@@ -30,11 +30,11 @@ function player(array) {   // this function is used to deal 26 cards to the 2 pl
     return deck;
 }
 
-function card(array) {
+function card(array) {      // this takes the deck array .shift takes the first element of the array (the card) then removes it from the array
     return array.shift();
 }
 
-function play_war(arr, array) {
+function play_war(arr, array) {  // this function is where the game starts once you run the code on live server
     let card = 26;
     let moch_card = 0;
     let yu_card = 0;
